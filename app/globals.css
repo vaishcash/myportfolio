@@ -5,6 +5,24 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --expcard-cta-border: rgba(82, 62, 155, 0.5);
+  /* --expcard-cta-bg: */
+  --expcard-bg-bg: #07040c;
+  --expcard-cta-bg: radial-gradient(
+    circle,
+    rgba(100, 47, 210, 1) 0%,
+    rgba(37, 17, 92, 1) 100%
+  );
+  --expcard-fg-bg: radial-gradient(
+    circle,
+    rgba(100, 47, 210, 1) 0%,
+    rgba(37, 17, 92, 1) 100%
+    rgba(37, 17, 92, 1) 100%
+   
+  );
+  --expcard-bg-border: rgba(82, 62, 155, 0.2);
+  --expcard-cta-border: rgba(82, 62, 155, 0.5);
+  --expcard-fg-border: rgba(82, 62, 155, 0.25);
 }
 
 @media (prefers-color-scheme: dark) {

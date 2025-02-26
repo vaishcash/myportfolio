@@ -1,0 +1,3 @@
+.upperCard:hover > .innerCard {
+  transform: rotate(30deg);
+}       

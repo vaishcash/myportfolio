@@ -1,9 +1,11 @@
 export default function AboutMe() {
   return (
-    <div className="flex flex-col justify-center items-center text-center mt-8 gap-4">
+    <div className="flex flex-col justify-center items-center text-center mt-44 ">
       <h1 className="text-4xl">About Me</h1>
-      <p className="text-2xl">Me and My Journey</p>
-      <p className="text-md px-12">
+      <p className="text-md  bg-gradient-to-r from-gray-500 via-gray-100 to-gray-500 text-transparent bg-clip-text">
+        Me and My Journey
+      </p>
+      <p className="text-md px-44 max-sm:px-16 mt-16">
         I am an engineering physics undergraduate passionate about Quantum
         Computing and Web Development. About two years ago, when I first
         discovered the field of Web Development and Quantum Computing, it

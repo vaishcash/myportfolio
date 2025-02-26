@@ -1,10 +1,10 @@
 import Link from "next/link";
-import AboutMe from "./About";
+
 
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen bg-gradient-to-b from-[#0a0a1f] via-[#1a0b2e] to-[#2d0a4d] text-white relative rounded-3xl overflow-hidden shadow-md">
+      <main className="min-h-screen bg-gradient-to-b from-[#000000] via-[#2d0a7d] to-[#6d3fd8] text-white relative rounded-3xl overflow-hidden shadow-md">
         {/* Navbar area */}
 
         {/* Stars background */}
@@ -27,12 +27,17 @@ export default function Home() {
                 Contact me here →
               </Link>
 
-              <Link
-                href="/resume"
-                className="bg-white/10 text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-white/20 transition-colors"
-              >
-                Download Resume ↓
-              </Link>
+          
+    <Link
+      href="/Vaishnavi Bharti - Frontend Resume.pdf"
+      download
+      className="bg-white/10 text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-white/20 transition-colors"
+    >
+      Download Resume ↓
+    </Link>
+  );
+}
+
 
               <div className="flex justify-center gap-4 ">
                 <Link
@@ -99,7 +104,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <AboutMe/>
     </>
   );
 }
