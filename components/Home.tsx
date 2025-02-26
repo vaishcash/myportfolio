@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-
 export default function Home() {
   return (
     <>
@@ -27,17 +26,13 @@ export default function Home() {
                 Contact me here →
               </Link>
 
-          
-    <Link
-      href="/Vaishnavi Bharti - Frontend Resume.pdf"
-      download
-      className="bg-white/10 text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-white/20 transition-colors"
-    >
-      Download Resume ↓
-    </Link>
-  );
-}
-
+              <Link
+                href="/Vaishnavi Bharti - Frontend Resume.pdf"
+                download
+                className="bg-white/10 text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-white/20 transition-colors"
+              >
+                Download Resume ↓
+              </Link>
 
               <div className="flex justify-center gap-4 ">
                 <Link
