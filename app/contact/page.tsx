@@ -8,7 +8,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0a0a1f] via-[#1a0b2e] to-[#2d0a4d] text-white relative overflow-hidden py-32">
       {/* Stars background */}
-      <div className="absolute inset-0 bg-[url('/stars.png')] opacity-50" />
+      
       <Navbar />
       <div className="container mx-auto pl-16 px-4">
         <div className="max-w-7xl mx-auto">

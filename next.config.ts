@@ -6,6 +6,8 @@ const nextConfig = {
       "cdn-icons-png.freepik.com",
       "cdn.logojoy.com",
       "img.freepik.com",
+      "images.unsplash.com",
+     
     ],
   },
 };

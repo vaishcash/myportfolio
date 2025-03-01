@@ -7,7 +7,7 @@ export default function Home() {
         {/* Navbar area */}
 
         {/* Stars background */}
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-50" />
+        
 
         <div className="relative z-10 container mx-auto px-4 pt-32">
           <div className="max-w-4xl mx-auto text-center">
