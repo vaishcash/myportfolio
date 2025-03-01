@@ -3,37 +3,63 @@ import { BookCard } from "./card/card";
 
 const projectData = [
   {
-    title: "E-Commerce Dashboard",
+    title: "Frontend Developer - Rezume (Startup)",
+    techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
     description:
-      "A feature-rich admin dashboard for managing e-commerce platforms, built with a modern UI and real-time analytics. Implements authentication, dynamic charts, and order tracking.",
+      "Developed the frontend for a resume-building platform that provides users with resume templates and scoring based on industry standards. Implemented role-based authentication, form validations, and data storage using Firebase. Designed a clean and intuitive UI to enhance user experience and engagement.",
+    dates: "January 2024 - Present",
+  },
+  {
+    title: "Web Developer Intern - CodSoft",
     techStack: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
       "Next.js",
-      "TypeScript",
       "Tailwind CSS",
-      "Firebase",
-      "Chart.js",
     ],
-    date: "June 2024",
-    imgSrc:
-      "https://img.freepik.com/free-vector/triangle-inside-circle_1045-180.jpg", // Example image
+    description:
+      "Worked on frontend development projects, enhancing web applications with responsive and dynamic UI components. Gained experience in using React and Next.js to optimize performance and improve user experience. Collaborated with the development team to implement new features and debug existing issues.",
+    dates: "November 2023 - January 2024",
   },
   {
-    title: "Social Media App",
+    title: "Graphic Designer - XYZ Digital Private Limited",
+    techStack: [
+      "Figma",
+      "Adobe InDesign",
+      "Illustrator",
+      "Photoshop",
+      "CorelDRAW",
+      "Canva",
+    ],
     description:
-      "A scalable social networking platform with real-time messaging, user authentication, and media sharing. Optimized for performance and mobile responsiveness.",
-    techStack: ["React Native", "Redux", "Node.js", "MongoDB", "Socket.io"],
-    date: "August 2024",
-    imgSrc:
-      "https://marketplace.canva.com/EAFzjXx_i5w/1/0/1600w/canva-blue-illustrative-e-commerce-online-shop-logo-fZejT2DpGCw.jpg", // Example image
+      "Designed innovative exhibition areas and successfully managed the CCTV IFSEC exhibition, significantly enhancing brand visibility and generating increased leads. Developed captivating cover packages for newly launched products, maintaining product appeal and brand consistency for clients such as Daichi, Mastel, and international clients like Ruision. Directed the design and production of social media posts, EDMs, logos, tags, videos, and data sheets, leading to a 300% increase in brand value.",
+    dates: "June 2023 - November 2023",
   },
   {
-    title: "Task Management App",
+    title: "Graphic Designer and Social Media Executive - Greentech Foundation",
+    techStack: [
+      "Adobe Illustrator",
+      "Adobe InDesign",
+      "Adobe Photoshop",
+      "CorelDRAW",
+    ],
     description:
-      "A productivity-focused web application that allows users to manage tasks, set deadlines, and track progress with real-time updates and notifications.",
-    techStack: ["Vue.js", "TypeScript", "Firebase", "Tailwind CSS"],
-    date: "September 2024",
-    imgSrc:
-      "https://cdn.logojoy.com/wp-content/uploads/2018/08/23161057/1-23.png", // Example image
+      "Designed and managed international event templates, booklets, and promotional materials, including for high-profile events in Bangkok. Applied advanced color theory, typography, and layout design to ensure clear communication of event messages and audience engagement. Collaborated with cross-functional teams to create visually compelling materials that enhanced brand visibility and event success.",
+    dates: "August 2022 - June 2023",
+  },
+  {
+    title: "Graphic Designer - Edumigration",
+    techStack: [
+      "Adobe Illustrator",
+      "Adobe InDesign",
+      "Adobe Photoshop",
+      "CorelDRAW",
+    ],
+    description:
+      "Developed visually appealing infographics to simplify complex immigration processes, timelines, and requirements for clients. Designed engaging training materials and manuals for staff, ensuring clarity and ease of navigation. Contributed to improving internal and external communication through high-quality visual assets.",
+    dates: "September 2021 - June 2022",
   },
 ];
 
@@ -48,13 +74,13 @@ function ExperienceCard() {
         </p>
       </div>
 
-      <div className="flex flex-wrap justify-center  mt-16">
+      <div className="flex flex-wrap justify-center mt-16">
         {projectData.map((item, index) => (
           <BookCard
-            key={index} // Adding key to avoid React warning
-            imgSrc={item.imgSrc}
-            techStack={item.techStack} // Corrected techStack prop
+            key={index}
             title={item.title}
+            techStack={item.techStack}
+          
           />
         ))}
       </div>

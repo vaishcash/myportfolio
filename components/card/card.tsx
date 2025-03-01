@@ -57,12 +57,13 @@ export const BookCard = ({
   backDescription = DEFAULT_BG_TEXT,
   title,
   techStack,
-   imgSrc,
+  
 }: {
   backDescription?: string;
   title: string;
  techStack: string[];
-  imgSrc: string;
+  
+  
 }) => {
   return (
     <div className="expcard animated-expcard z-30">
@@ -86,10 +87,7 @@ export const BookCard = ({
             ))}
           </ul>
         </div>
-        <div className="expcard-logo">
-          <Image src={imgSrc} alt="Creed &amp; Bear" fill />
-          <p>Creed &amp; Bear</p>
-        </div>
+        
       </div>
     </div>
   );
