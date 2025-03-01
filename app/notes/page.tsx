@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import {
   Search,
-  PlusCircle,
+  
   Github,
   ExternalLink,
   Edit,
@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { format } from "date-fns";
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
 
 // Define project data structure
 interface Project {
@@ -279,348 +280,392 @@ function Notes() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a1f] via-[#1a0b2e] to-[#2d0a4d] text-white relative overflow-hidden z-30 ">
-      <div className="container mx-auto px-4 py-8 z-100 ">
-        {/* Header Section */}
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold text-white font-poppins mb-6">
-            My Professional Journey
-          </h1>
+    <>
+      <Navbar />
+      <div className="min-h-screen mt-16 bg-gradient-to-b from-[#0a0a1f] via-[#1a0b2e] to-[#2d0a4d] text-white relative overflow-hidden   ">
+        <div className="container  mx-auto px-4 py-8  ">
+          {/* Header Section */}
+          <header className="mb-8">
+            <h1 className="text-4xl font-bold text-white font-poppins mb-6">
+              My Professional Journey
+            </h1>
 
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 ">
-            {/* Navigation */}
-            <nav className="flex flex-wrap gap-4">
-              {["All Projects", "Development", "Design", "Timeline"].map(
-                (filter) => (
-                  <button
-                    key={filter}
-                    onClick={() => setActiveFilter(filter)}
-                    className={`px-4 py-2 rounded-md transition-all duration-300 ${
-                      activeFilter === filter
-                        ? "bg-[#2C3E50] text-white font-medium"
-                        : "bg-white text-gray-900 hover:bg-gray-100"
-                    }`}
-                  >
-                    {filter}
-                  </button>
-                )
-              )}
-            </nav>
-
-            {/* Search and Add Project */}
-            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-              <div className="relative flex-grow">
-                <input
-                  type="text"
-                  placeholder="Search projects..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3498DB] focus:border-transparent"
-                />
-                <Search
-                  className="absolute left-3 top-2.5 text-gray-400"
-                  size={18}
-                />
-                {searchTerm && (
-                  <button
-                    onClick={() => setSearchTerm("")}
-                    className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600"
-                  >
-                    <X size={18} />
-                  </button>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 ">
+              {/* Navigation */}
+              <nav className="flex flex-wrap gap-4 z-30">
+                {["All Projects", "Development", "Design", "Timeline"].map(
+                  (filter) => (
+                    <button
+                      key={filter}
+                      onClick={() => setActiveFilter(filter)}
+                      className={`px-4 py-2 rounded-md transition-all duration-300 ${
+                        activeFilter === filter
+                          ? "bg-[#2C3E50] text-white font-medium"
+                          : "bg-white text-gray-900 hover:bg-gray-100"
+                      }`}
+                    >
+                      {filter}
+                    </button>
+                  )
                 )}
-              </div>
+              </nav>
 
-              <button
-                onClick={() => setShowFilters(!showFilters)}
-                className="px-4 py-2 bg-black text-white border border-gray-300 rounded-md flex items-center gap-2 hover:bg-gray-100 hover:text-black  transition-colors duration-300"
-              >
-                <Filter size={18} />
-                <span>Filters</span>
-                {(activeTechFilters.length > 0 || yearFilter) && (
-                  <span className="bg-[#3498DB] text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                    {activeTechFilters.length + (yearFilter ? 1 : 0)}
+              {/* Search and Add Project */}
+              <div className="flex z-30  flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <div className="relative flex-grow">
+                  <input
+                    type="text"
+                    placeholder="Search projects..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3498DB] focus:border-transparent"
+                  />
+                  <Search
+                    className="absolute left-3 top-2.5 text-gray-400"
+                    size={18}
+                  />
+                  {searchTerm && (
+                    <button
+                      onClick={() => setSearchTerm("")}
+                      className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600"
+                    >
+                      <X size={18} />
+                    </button>
+                  )}
+                </div>
+
+                <button
+                  onClick={() => setShowFilters(!showFilters)}
+                  className="px-4 py-2 bg-black text-white border border-gray-300 rounded-md flex items-center gap-2 hover:bg-gray-100 hover:text-black  transition-colors duration-300"
+                >
+                  <Filter size={18} />
+                  <span>Filters</span>
+                  {(activeTechFilters.length > 0 || yearFilter) && (
+                    <span className="bg-[#3498DB] text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {activeTechFilters.length + (yearFilter ? 1 : 0)}
+                    </span>
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {/* Filters Panel */}
+            {showFilters && (
+              <div className="bg-white z-30 p-4 rounded-md shadow-md mb-6 animate-slideDown">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="font-medium text-lg">Filter Projects</h3>
+                  <button
+                    onClick={clearFilters}
+                    className="text-sm text-[#3498DB] hover:text-[#2980b9] transition-colors duration-300"
+                  >
+                    Clear all filters
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Tech Stack Filters */}
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <Code size={16} className="text-[#3498DB]" />
+                      Technologies
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {allTechStacks.map((tech) => (
+                        <button
+                          key={tech}
+                          onClick={() => toggleTechFilter(tech)}
+                          className={`px-3 py-1 text-sm rounded-full transition-all duration-300 ${
+                            activeTechFilters.includes(tech)
+                              ? "bg-[#3498DB] text-white"
+                              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                          }`}
+                        >
+                          {tech}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Year Filters */}
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <Calendar size={16} className="text-[#3498DB]" />
+                      Time Period
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {allYears.map((year) => (
+                        <button
+                          key={year}
+                          onClick={() => toggleYearFilter(year)}
+                          className={`px-3 py-1 text-sm rounded-full transition-all duration-300 ${
+                            yearFilter === year
+                              ? "bg-[#3498DB] text-white"
+                              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                          }`}
+                        >
+                          {year}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Active Filters Display */}
+            {(activeTechFilters.length > 0 || yearFilter) && (
+              <div className="flex flex-wrap items-center gap-2 mb-6">
+                <span className="text-sm text-gray-500">Active filters:</span>
+                {activeTechFilters.map((tech) => (
+                  <span
+                    key={tech}
+                    className="bg-[#3498DB] text-white text-sm px-3 py-1 rounded-full flex items-center gap-1"
+                  >
+                    {tech}
+                    <button onClick={() => toggleTechFilter(tech)}>
+                      <X size={14} />
+                    </button>
+                  </span>
+                ))}
+                {yearFilter && (
+                  <span className="bg-[#3498DB] text-white text-sm px-3 py-1 rounded-full flex items-center gap-1">
+                    {yearFilter}
+                    <button onClick={() => setYearFilter(null)}>
+                      <X size={14} />
+                    </button>
                   </span>
                 )}
-              </button>
-
-           
-            </div>
-          </div>
-
-          {/* Filters Panel */}
-          {showFilters && (
-            <div className="bg-white p-4 rounded-md shadow-md mb-6 animate-slideDown">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="font-medium text-lg">Filter Projects</h3>
                 <button
                   onClick={clearFilters}
-                  className="text-sm text-[#3498DB] hover:text-[#2980b9] transition-colors duration-300"
+                  className="text-sm text-[#3498DB] hover:underline"
                 >
-                  Clear all filters
+                  Clear all
                 </button>
               </div>
+            )}
+          </header>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Tech Stack Filters */}
-                <div>
-                  <h4 className="font-medium mb-2 flex items-center gap-2">
-                    <Code size={16} className="text-[#3498DB]" />
-                    Technologies
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {allTechStacks.map((tech) => (
-                      <button
-                        key={tech}
-                        onClick={() => toggleTechFilter(tech)}
-                        className={`px-3 py-1 text-sm rounded-full transition-all duration-300 ${
-                          activeTechFilters.includes(tech)
-                            ? "bg-[#3498DB] text-white"
-                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                        }`}
-                      >
-                        {tech}
-                      </button>
-                    ))}
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Main Content - Project Cards */}
+            <main className="lg:w-3/4 z-30">
+              {filteredProjects.length === 0 ? (
+                <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+                  <div className="text-gray-400 mb-4">
+                    <Search size={48} className="mx-auto" />
                   </div>
+                  <h3 className="text-xl font-medium mb-2">
+                    No projects found
+                  </h3>
+                  <p className="text-gray-500 mb-4">
+                    Try adjusting your search or filters to find what you are
+                    looking for.
+                  </p>
+                  <button
+                    onClick={clearFilters}
+                    className="px-4 py-2 bg-[#3498DB] text-white rounded-md hover:bg-[#2980b9] transition-colors duration-300"
+                  >
+                    Clear all filters
+                  </button>
                 </div>
+              ) : (
+                <>
+                  <h2 className="text-2xl font-semibold text-[#2C3E50] mb-6 font-poppins">
+                    {filteredProjects.length}{" "}
+                    {filteredProjects.length === 1 ? "Project" : "Projects"}{" "}
+                    {activeFilter !== "All Projects"
+                      ? `in ${activeFilter}`
+                      : ""}
+                  </h2>
 
-                {/* Year Filters */}
-                <div>
-                  <h4 className="font-medium mb-2 flex items-center gap-2">
-                    <Calendar size={16} className="text-[#3498DB]" />
-                    Time Period
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {allYears.map((year) => (
-                      <button
-                        key={year}
-                        onClick={() => toggleYearFilter(year)}
-                        className={`px-3 py-1 text-sm rounded-full transition-all duration-300 ${
-                          yearFilter === year
-                            ? "bg-[#3498DB] text-white"
-                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                        }`}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 z-30">
+                    {filteredProjects.map((project) => (
+                      <div
+                        key={project.id}
+                        className="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md group"
                       >
-                        {year}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Active Filters Display */}
-          {(activeTechFilters.length > 0 || yearFilter) && (
-            <div className="flex flex-wrap items-center gap-2 mb-6">
-              <span className="text-sm text-gray-500">Active filters:</span>
-              {activeTechFilters.map((tech) => (
-                <span
-                  key={tech}
-                  className="bg-[#3498DB] text-white text-sm px-3 py-1 rounded-full flex items-center gap-1"
-                >
-                  {tech}
-                  <button onClick={() => toggleTechFilter(tech)}>
-                    <X size={14} />
-                  </button>
-                </span>
-              ))}
-              {yearFilter && (
-                <span className="bg-[#3498DB] text-white text-sm px-3 py-1 rounded-full flex items-center gap-1">
-                  {yearFilter}
-                  <button onClick={() => setYearFilter(null)}>
-                    <X size={14} />
-                  </button>
-                </span>
-              )}
-              <button
-                onClick={clearFilters}
-                className="text-sm text-[#3498DB] hover:underline"
-              >
-                Clear all
-              </button>
-            </div>
-          )}
-        </header>
-
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Main Content - Project Cards */}
-          <main className="lg:w-3/4">
-            {filteredProjects.length === 0 ? (
-              <div className="bg-white rounded-lg shadow-sm p-8 text-center">
-                <div className="text-gray-400 mb-4">
-                  <Search size={48} className="mx-auto" />
-                </div>
-                <h3 className="text-xl font-medium mb-2">No projects found</h3>
-                <p className="text-gray-500 mb-4">
-                  Try adjusting your search or filters to find what you are
-                  looking for.
-                </p>
-                <button
-                  onClick={clearFilters}
-                  className="px-4 py-2 bg-[#3498DB] text-white rounded-md hover:bg-[#2980b9] transition-colors duration-300"
-                >
-                  Clear all filters
-                </button>
-              </div>
-            ) : (
-              <>
-                <h2 className="text-2xl font-semibold text-[#2C3E50] mb-6 font-poppins">
-                  {filteredProjects.length}{" "}
-                  {filteredProjects.length === 1 ? "Project" : "Projects"}{" "}
-                  {activeFilter !== "All Projects" ? `in ${activeFilter}` : ""}
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredProjects.map((project) => (
-                    <div
-                      key={project.id}
-                      className="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md group"
-                    >
-                      {/* Project Image */}
-                      <div className="relative h-48 overflow-hidden">
-                        <Image
-                          src={project.thumbnail}
-                          alt={project.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          width={500}
-                          height={500}
-                        />
-                        <div className="absolute top-0 right-0 m-3">
-                          <span
-                            className={`text-xs font-medium px-3 py-1 rounded-full ${
-                              project.status === "Active"
-                                ? "bg-green-100 text-green-800"
-                                : "bg-blue-100 text-blue-800"
-                            }`}
-                          >
-                            {project.status}
-                          </span>
-                        </div>
-
-                        {/* Quick Actions Overlay */}
-                        <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                          <button className="p-2 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300">
-                            <Edit size={18} className="text-gray-700" />
-                          </button>
-                          <button className="p-2 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300">
-                            <Share2 size={18} className="text-gray-700" />
-                          </button>
-                          <button className="p-2 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300">
-                            <Archive size={18} className="text-gray-700" />
-                          </button>
-                          {project.pinned ? (
-                            <button className="p-2 bg-yellow-400 rounded-full hover:bg-yellow-500 transition-colors duration-300">
-                              <Pin size={18} className="text-white" />
-                            </button>
-                          ) : (
-                            <button className="p-2 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300">
-                              <Star size={18} className="text-gray-700" />
-                            </button>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Project Content */}
-                      <div className="p-5">
-                        <div className="flex justify-between items-start mb-3">
-                          <h3 className="text-xl font-bold text-[#2C3E50] leading-tight">
-                            {project.title}
-                          </h3>
-                        </div>
-
-                        <div className="flex items-center text-sm text-gray-500 mb-3">
-                          <Clock size={14} className="mr-1" />
-                          <span>{project.duration}</span>
-                        </div>
-
-                        {/* Tech Stack */}
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.techStack.map((tech, index) => (
+                        {/* Project Image */}
+                        <div className="relative h-48 overflow-hidden">
+                          <Image
+                            src={project.thumbnail}
+                            alt={project.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            width={500}
+                            height={500}
+                          />
+                          <div className="absolute top-0 right-0 m-3">
                             <span
-                              key={index}
-                              className="text-xs px-2 py-1 rounded-md bg-gray-100 text-gray-700"
+                              className={`text-xs font-medium px-3 py-1 rounded-full ${
+                                project.status === "Active"
+                                  ? "bg-green-100 text-green-800"
+                                  : "bg-blue-100 text-blue-800"
+                              }`}
                             >
-                              {tech}
+                              {project.status}
                             </span>
-                          ))}
-                        </div>
+                          </div>
 
-                        {/* Description */}
-                        <div className="mb-4">
-                          <p
-                            className={`text-gray-600 text-sm ${
-                              !expandedDescriptions[project.id]
-                                ? "line-clamp-3"
-                                : ""
-                            }`}
-                          >
-                            {project.description}
-                          </p>
-                          {project.description.length > 150 && (
-                            <button
-                              onClick={() => toggleDescription(project.id)}
-                              className="text-[#3498DB] text-sm mt-1 hover:underline focus:outline-none"
-                            >
-                              {expandedDescriptions[project.id]
-                                ? "Show less"
-                                : "Read more"}
+                          {/* Quick Actions Overlay */}
+                          <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 ">
+                            <button className="p-2 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300">
+                              <Edit size={18} className="text-gray-700" />
                             </button>
-                          )}
-                        </div>
-
-                        {/* Links */}
-                        {(project.links.github || project.links.demo) && (
-                          <div className="flex gap-3 mt-4">
-                            {project.links.github && (
-                              <a
-                                href={project.links.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-1 text-sm text-gray-700 hover:text-[#3498DB] transition-colors duration-300"
-                              >
-                                <Github size={16} />
-                                <span>GitHub</span>
-                              </a>
-                            )}
-                            {project.links.demo && (
-                              <a
-                                href={project.links.demo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-1 text-sm text-gray-700 hover:text-[#3498DB] transition-colors duration-300"
-                              >
-                                <ExternalLink size={16} />
-                                <span>Live Demo</span>
-                              </a>
+                            <button className="p-2 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300">
+                              <Share2 size={18} className="text-gray-700" />
+                            </button>
+                            <button className="p-2 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300">
+                              <Archive size={18} className="text-gray-700" />
+                            </button>
+                            {project.pinned ? (
+                              <button className="p-2 bg-yellow-400 rounded-full hover:bg-yellow-500 transition-colors duration-300">
+                                <Pin size={18} className="text-white" />
+                              </button>
+                            ) : (
+                              <button className="p-2 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300">
+                                <Star size={18} className="text-gray-700" />
+                              </button>
                             )}
                           </div>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-          </main>
+                        </div>
 
-          {/* Sidebar */}
-          <aside className="lg:w-1/4 space-y-6">
-            {/* Pinned Projects */}
-            {pinnedProjects.length > 0 && (
-              <div className="bg-white rounded-lg shadow-sm p-5">
+                        {/* Project Content */}
+                        <div className="p-5">
+                          <div className="flex justify-between items-start mb-3">
+                            <h3 className="text-xl font-bold text-[#2C3E50] leading-tight">
+                              {project.title}
+                            </h3>
+                          </div>
+
+                          <div className="flex items-center text-sm text-gray-500 mb-3">
+                            <Clock size={14} className="mr-1" />
+                            <span>{project.duration}</span>
+                          </div>
+
+                          {/* Tech Stack */}
+                          <div className="flex flex-wrap z-30 gap-2 mb-4">
+                            {project.techStack.map((tech, index) => (
+                              <span
+                                key={index}
+                                className="text-xs px-2 py-1 rounded-md bg-gray-100 text-gray-700"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+
+                          {/* Description */}
+                          <div className="mb-4 z-30">
+                            <p
+                              className={`text-gray-600 text-sm ${
+                                !expandedDescriptions[project.id]
+                                  ? "line-clamp-3"
+                                  : ""
+                              }`}
+                            >
+                              {project.description}
+                            </p>
+                            {project.description.length > 150 && (
+                              <button
+                                onClick={() => toggleDescription(project.id)}
+                                className="text-[#3498DB] text-sm mt-1 hover:underline focus:outline-none"
+                              >
+                                {expandedDescriptions[project.id]
+                                  ? "Show less"
+                                  : "Read more"}
+                              </button>
+                            )}
+                          </div>
+
+                          {/* Links */}
+                          {(project.links.github || project.links.demo) && (
+                            <div className="flex gap-3 mt-4">
+                              {project.links.github && (
+                                <a
+                                  href={project.links.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-1 text-sm text-gray-700 hover:text-[#3498DB] transition-colors duration-300"
+                                >
+                                  <Github size={16} />
+                                  <span>GitHub</span>
+                                </a>
+                              )}
+                              {project.links.demo && (
+                                <a
+                                  href={project.links.demo}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-1 text-sm text-gray-700 hover:text-[#3498DB] transition-colors duration-300"
+                                >
+                                  <ExternalLink size={16} />
+                                  <span>Live Demo</span>
+                                </a>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </main>
+
+            {/* Sidebar */}
+            <aside className="lg:w-1/4 z-30 space-y-6">
+              {/* Pinned Projects */}
+              {pinnedProjects.length > 0 && (
+                <div className="bg-white rounded-lg shadow-sm p-5">
+                  <h3 className="text-lg font-semibold text-[#2C3E50] mb-4 flex items-center gap-2">
+                    <Pin size={18} className="text-yellow-500" />
+                    Pinned Projects
+                  </h3>
+                  <div className="space-y-3">
+                    {pinnedProjects.map((project) => (
+                      <div
+                        key={project.id}
+                        className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-md transition-colors duration-300"
+                      >
+                        <div className="w-10 h-10 rounded-md overflow-hidden flex-shrink-0">
+                          <Image
+                            src={project.thumbnail}
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                            width={40}
+                            height={40}
+                          />
+                        </div>
+                        <div className="flex-grow min-w-0 ">
+                          <h4 className="font-medium text-gray-800 truncate">
+                            {project.title}
+                          </h4>
+                          <div className="flex items-center text-xs text-gray-500">
+                            <span className="truncate">
+                              {project.techStack.slice(0, 2).join(", ")}
+                            </span>
+                            {project.techStack.length > 2 && (
+                              <span> +{project.techStack.length - 2}</span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Recent Activity */}
+              <div className="bg-white z-30 rounded-lg shadow-sm p-5">
                 <h3 className="text-lg font-semibold text-[#2C3E50] mb-4 flex items-center gap-2">
-                  <Pin size={18} className="text-yellow-500" />
-                  Pinned Projects
+                  <Clock size={18} className="text-[#3498DB]" />
+                  Recent Activity
                 </h3>
                 <div className="space-y-3">
-                  {pinnedProjects.map((project) => (
+                  {recentProjects.map((project) => (
                     <div
                       key={project.id}
                       className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-md transition-colors duration-300"
                     >
-                      <div className="w-10 h-10 rounded-md overflow-hidden flex-shrink-0">
+                      <div className="w-10 h-10 z-30 rounded-md overflow-hidden flex-shrink-0">
                         <Image
                           src={project.thumbnail}
                           alt={project.title}
@@ -629,16 +674,15 @@ function Notes() {
                           height={40}
                         />
                       </div>
-                      <div className="flex-grow min-w-0">
+                      <div className="flex-grow min-w-0 z-30">
                         <h4 className="font-medium text-gray-800 truncate">
                           {project.title}
                         </h4>
-                        <div className="flex items-center text-xs text-gray-500">
-                          <span className="truncate">
-                            {project.techStack.slice(0, 2).join(", ")}
-                          </span>
-                          {project.techStack.length > 2 && (
-                            <span> +{project.techStack.length - 2}</span>
+                        <div className="text-xs text-gray-500 ">
+                          Updated{" "}
+                          {format(
+                            new Date(project.lastModified),
+                            "MMM d, yyyy"
                           )}
                         </div>
                       </div>
@@ -646,78 +690,43 @@ function Notes() {
                   ))}
                 </div>
               </div>
-            )}
 
-            {/* Recent Activity */}
-            <div className="bg-white rounded-lg shadow-sm p-5">
-              <h3 className="text-lg font-semibold text-[#2C3E50] mb-4 flex items-center gap-2">
-                <Clock size={18} className="text-[#3498DB]" />
-                Recent Activity
-              </h3>
-              <div className="space-y-3">
-                {recentProjects.map((project) => (
-                  <div
-                    key={project.id}
-                    className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-md transition-colors duration-300"
-                  >
-                    <div className="w-10 h-10 rounded-md overflow-hidden flex-shrink-0">
-                      <Image
-                        src={project.thumbnail}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                        width={40}
-                        height={40}
-                      />
-                    </div>
-                    <div className="flex-grow min-w-0">
-                      <h4 className="font-medium text-gray-800 truncate">
-                        {project.title}
-                      </h4>
-                      <div className="text-xs text-gray-500">
-                        Updated{" "}
-                        {format(new Date(project.lastModified), "MMM d, yyyy")}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Archive */}
-            <div className="bg-white rounded-lg shadow-sm p-5">
-              <h3 className="text-lg font-semibold text-[#2C3E50] mb-4 flex items-center gap-2">
-                <Archive size={18} className="text-[#3498DB]" />
-                Archive
-              </h3>
-              <div className="space-y-2">
-                {projectCountsByYear.map(({ year, count }) => (
-                  <button
-                    key={year}
-                    onClick={() => toggleYearFilter(year)}
-                    className={`flex justify-between items-center w-full p-2 rounded-md transition-colors duration-300 ${
-                      yearFilter === year
-                        ? "bg-[#3498DB] text-white"
-                        : "hover:bg-gray-50 text-gray-700"
-                    }`}
-                  >
-                    <span>{year}</span>
-                    <span
-                      className={`text-xs px-2 py-1 rounded-full ${
+              {/* Archive */}
+              <div className="bg-white rounded-lg shadow-sm p-5">
+                <h3 className="text-lg font-semibold text-[#2C3E50] mb-4 flex items-center gap-2">
+                  <Archive size={18} className="text-[#3498DB]" />
+                  Archive
+                </h3>
+                <div className="space-y-2">
+                  {projectCountsByYear.map(({ year, count }) => (
+                    <button
+                      key={year}
+                      onClick={() => toggleYearFilter(year)}
+                      className={`flex justify-between items-center w-full p-2 rounded-md transition-colors duration-300 ${
                         yearFilter === year
-                          ? "bg-white text-[#3498DB]"
-                          : "bg-gray-100 text-gray-600"
+                          ? "bg-[#3498DB] text-white"
+                          : "hover:bg-gray-50 text-gray-700"
                       }`}
                     >
-                      {count}
-                    </span>
-                  </button>
-                ))}
+                      <span>{year}</span>
+                      <span
+                        className={`text-xs px-2 py-1 rounded-full ${
+                          yearFilter === year
+                            ? "bg-white text-[#3498DB]"
+                            : "bg-gray-100 text-gray-600"
+                        }`}
+                      >
+                        {count}
+                      </span>
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-          </aside>
+            </aside>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
