@@ -279,15 +279,15 @@ function Notes() {
   });
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-gray-800 font-sans">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-b from-[#0a0a1f] via-[#1a0b2e] to-[#2d0a4d] text-white relative overflow-hidden z-30 ">
+      <div className="container mx-auto px-4 py-8 z-100 ">
         {/* Header Section */}
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-[#2C3E50] font-poppins mb-6">
+          <h1 className="text-4xl font-bold text-white font-poppins mb-6">
             My Professional Journey
           </h1>
 
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 ">
             {/* Navigation */}
             <nav className="flex flex-wrap gap-4">
               {["All Projects", "Development", "Design", "Timeline"].map(
@@ -298,7 +298,7 @@ function Notes() {
                     className={`px-4 py-2 rounded-md transition-all duration-300 ${
                       activeFilter === filter
                         ? "bg-[#2C3E50] text-white font-medium"
-                        : "bg-white text-gray-700 hover:bg-gray-100"
+                        : "bg-white text-gray-900 hover:bg-gray-100"
                     }`}
                   >
                     {filter}
@@ -333,21 +333,18 @@ function Notes() {
 
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className="px-4 py-2 bg-white border border-gray-300 rounded-md flex items-center gap-2 hover:bg-gray-100 transition-colors duration-300"
+                className="px-4 py-2 bg-black text-white border border-gray-300 rounded-md flex items-center gap-2 hover:bg-gray-100 hover:text-black  transition-colors duration-300"
               >
                 <Filter size={18} />
                 <span>Filters</span>
                 {(activeTechFilters.length > 0 || yearFilter) && (
-                  <span className="bg-[#3498DB] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="bg-[#3498DB] text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
                     {activeTechFilters.length + (yearFilter ? 1 : 0)}
                   </span>
                 )}
               </button>
 
-              <button className="px-4 py-2 bg-[#2C3E50] text-white rounded-md flex items-center gap-2 hover:bg-[#1e2a36] transition-colors duration-300">
-                <PlusCircle size={18} />
-                <span>Add New Project</span>
-              </button>
+           
             </div>
           </div>
 
