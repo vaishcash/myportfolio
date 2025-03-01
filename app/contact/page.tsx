@@ -6,12 +6,12 @@ import Navbar from "@/components/Navbar";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0a0a1f] via-[#1a0b2e] to-[#2d0a4d] text-white relative overflow-hidden py-32">
+    <main className="min-h-screen bg-gradient-to-b from-[#0a0a1f] via-[#1a0b2e] to-[#2d0a4d] text-white relative overflow-hidden py-32 ">
       {/* Stars background */}
       
       <Navbar />
-      <div className="container mx-auto pl-16 px-4">
-        <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto pl-16 px-4 ">
+        <div className="max-w-7xl  mx-auto z-50">
           <h1 className="text-5xl font-bold mb-2">Get in Touch</h1>
           <h2 className="text-2xl text-gray-300 mb-12">
             Let us create something amazing together
@@ -24,7 +24,7 @@ export default function ContactPage() {
             </div>
 
             {/* Globe */}
-            <div className="h-[600px] ">
+            <div className="h-[650px]   ">
               <Globe />
             </div>
           </div>

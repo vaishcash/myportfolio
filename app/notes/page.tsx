@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import {
   Search,
-  
   Github,
   ExternalLink,
   Edit,
@@ -14,7 +13,6 @@ import {
   Calendar,
   Filter,
   X,
-
   Pin,
   Code,
 } from "lucide-react";

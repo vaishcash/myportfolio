@@ -19,7 +19,7 @@ export default function App() {
       <ambientLight intensity={0.5} />
       <directionalLight position={[2, 2, 2]} intensity={1} />
       <Globe />
-      <OrbitControls enableZoom={true} />
+      <OrbitControls enableZoom={false} />
     </Canvas>
   );
 }
