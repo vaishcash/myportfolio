@@ -44,14 +44,7 @@ const Navbar = () => {
               Experience
             </ScrollLink>
           </li>
-          <li>
-            <Link
-              href="/projects"
-              className="text-white font-medium  rounded-full bg-white/10 hover:px-4 hover:py-2 hover:bg-white/20 transition-colors"
-            >
-              Projects
-            </Link>
-          </li>
+         
           <li>
             <Link
               href="/notes"
@@ -128,14 +121,7 @@ const Navbar = () => {
                 </ScrollLink>
               </li>
             
-              <li>
-                <Link
-                  href="/projects"
-                  className="text-white/80 hover:text-purple-400 hover:bg-black hover:rounded-full hover:p-2 transition-colors"
-                >
-                  Projects
-                </Link>
-              </li>
+              
               <li>
                 <Link
                   href="/notes"
