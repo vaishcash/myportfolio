@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import { BookCard } from "./card/card";
 
@@ -80,6 +82,7 @@ function ExperienceCard() {
             key={index}
             title={item.title}
             techStack={item.techStack}
+            description={item.description}
           
           />
         ))}

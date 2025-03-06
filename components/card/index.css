@@ -138,3 +138,43 @@ object {
 .animated-expcard:hover .expcard-cta {
   transform: translate(40px) rotate(7deg);
 }
+
+/* Modal Background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Box */
+.modal-content {
+  background: linear-gradient(135deg, #24003b, #44016e #24003b );
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Close Button */
+.close-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #b2a3cf;
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-btn:hover {
+  background: rgb(133, 65, 217);
+}
