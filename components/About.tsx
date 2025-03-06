@@ -1,6 +1,9 @@
 export default function AboutMe() {
   return (
-    <div className="flex flex-col justify-center items-center text-center mt-44 ">
+    <div
+      id="about"
+      className="flex flex-col justify-center items-center text-center z-10 pt-44 "
+    >
       <h1 className="text-4xl">About Me</h1>
       <p className="text-md  bg-gradient-to-r from-gray-500 via-gray-100 to-gray-500 text-transparent bg-clip-text">
         Me and My Journey

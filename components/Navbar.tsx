@@ -1,45 +1,53 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    scroll.scrollToTop();
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 bg-black/20 backdrop-blur-lg">
       <div className="lg:flex hidden bg-black/20 backdrop-blur-lg rounded-full px-8 py-4">
-        <ul className="flex space-x-8">
+        <ul className="flex space-x-16 ">
           <li>
             <Link
               href="/"
-              className="text-white font-medium px-4 py-2 rounded-full bg-white/10"
+              className="text-white font-medium  rounded-full bg-white/10 hover:px-4 hover:py-2 hover:bg-white/20 transition-colors"
             >
               Home
             </Link>
           </li>
           <li>
-            <Link
-              href="/about"
-              className="text-white/80 hover:text-white transition-colors"
+            <ScrollLink
+              to="about"
+              smooth={true}
+              duration={400}
+              className="text-white font-medium  rounded-full bg-white/10 hover:px-4 hover:py-2 hover:bg-white/20 transition-colors"
             >
               About
-            </Link>
+            </ScrollLink>
           </li>
           <li>
-            <Link
-              href="/experience"
-              className="text-white/80 hover:text-white transition-colors"
+            <ScrollLink
+              to="experience"
+              smooth={true}
+              duration={400}
+              className="text-white font-medium  rounded-full bg-white/10 hover:px-4 hover:py-2 hover:bg-white/20 transition-colors"
             >
               Experience
-            </Link>
+            </ScrollLink>
           </li>
           <li>
             <Link
               href="/projects"
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white font-medium  rounded-full bg-white/10 hover:px-4 hover:py-2 hover:bg-white/20 transition-colors"
             >
               Projects
             </Link>
@@ -47,7 +55,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/notes"
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white font-medium  rounded-full bg-white/10 hover:px-4 hover:py-2 hover:bg-white/20 transition-colors"
             >
               Notes
             </Link>
@@ -55,7 +63,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/resume"
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white font-medium  rounded-full bg-white/10 hover:px-4 hover:py-2 hover:bg-white/20 transition-colors"
             >
               Résumé
             </Link>
@@ -63,7 +71,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/contact"
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white font-medium  rounded-full bg-white/10 hover:px-4 hover:py-2 hover:bg-white/20 transition-colors"
             >
               Contact
             </Link>
@@ -100,21 +108,26 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/about"
-                  className="text-white/80 hover:text-purple-400 hover:bg-black hover:rounded-full hover:p-2 transition-colors"
+                <ScrollLink
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:text-purple-400 hover:bg-black hover:rounded-full hover:p-2 transition-colors"
                 >
                   About
-                </Link>
+                </ScrollLink>
               </li>
               <li>
-                <Link
-                  href="/experience"
-                  className="text-white/80 hover:text-purple-400 hover:bg-black hover:rounded-full hover:p-2 transition-colors"
+                <ScrollLink
+                  to="experience"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:text-purple-400 hover:bg-black hover:rounded-full hover:p-2 transition-colors"
                 >
                   Experience
-                </Link>
+                </ScrollLink>
               </li>
+            
               <li>
                 <Link
                   href="/projects"

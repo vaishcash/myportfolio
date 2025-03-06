@@ -34,7 +34,7 @@ export default function RootLayout({
         
           {children}
         </div>
-        <Stars />
+        <Stars  />
       </body>
     </html>
   );

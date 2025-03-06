@@ -1,35 +1,18 @@
-import ContactForm from "@/components/ContactForm";
-import Globe from "@/components/Globe";
-import Navbar from "@/components/Navbar";
+import ContactPage from '@/components/ContactPage'
+import Navbar from '@/components/Navbar'
+import React from 'react'
 
-
-
-export default function ContactPage() {
+function contact() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0a0a1f] via-[#1a0b2e] to-[#2d0a4d] text-white relative overflow-hidden py-32 ">
-      {/* Stars background */}
-      
-      <Navbar />
-      <div className="container mx-auto pl-16 px-4 ">
-        <div className="max-w-7xl  mx-auto z-50">
-          <h1 className="text-5xl font-bold mb-2">Get in Touch</h1>
-          <h2 className="text-2xl text-gray-300 mb-12">
-            Let us create something amazing together
-          </h2>
+    <div>
+      <Navbar/>
+      <div className="z-50">
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Contact Form */}
-            <div >
-              <ContactForm />
-            </div>
-
-            {/* Globe */}
-            <div className="h-[650px]   ">
-              <Globe />
-            </div>
-          </div>
-        </div>
+      <ContactPage/>
       </div>
-    </main>
-  );
+        
+    </div>
+  )
 }
+
+export default contact
