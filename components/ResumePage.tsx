@@ -1,12 +1,12 @@
 import React from "react";
 import { GithubIcon, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
-import Navbar from "@/components/Navbar";
+
 import Link from "next/link";
 
 const Resume = () => {
   return (
     <>
-      <Navbar />
+      
 
       <div className="bg-gradient-to-br  from-black via-purple-950 to-black min-h-screen p-4 md:p-8 flex justify-center items-start">
         <div className="max-w-4xl w-full bg-gray-900 shadow-2xl rounded-2xl p-6 md:p-8 border border-purple-500/30 backdrop-blur-sm hover:border-purple-500/10 transition-all mt-16 animate-fadeIn duration-300 ">

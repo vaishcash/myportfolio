@@ -9,17 +9,15 @@ export default function AboutMe() {
         Me and My Journey
       </p>
       <p className="text-md px-44 max-sm:px-16 mt-16">
-        I am an engineering physics undergraduate passionate about Quantum
-        Computing and Web Development. About two years ago, when I first
-        discovered the field of Web Development and Quantum Computing, it
-        totally amazed me and I have been dedicating my education to them ever
-        since. Over the past two years, I have dedicated a considerable amount
-        of time and effort to learning and developing skills in these fields by
-        taking various online courses, reading different articles, making
-        several projects, and involving in various research internships and
-        mentorship programs. Fast forward to today, I am currently working as a
-        Quantum Computing Intern at Creed & Bear and open-source contributor at
-        the AsyncAPI Initiative.
+        I am a UI/UX Designer passionate about transitioning into Web
+        Development. My journey into web development began when I collaborated
+        with web developers in my previous role, sparking my curiosity and
+        interest in coding. Since then, I have been actively enhancing my skills
+        by taking online courses, reading articles, working on personal
+        projects, and gaining hands-on experience through internships. Fast
+        forward to today, I am expanding my expertise in front-end and
+        full-stack development, continuously learning and contributing to
+        innovative projects.
       </p>
     </div>
   );

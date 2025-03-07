@@ -60,7 +60,7 @@ export const BookCard = ({
         <div className="modal-overlay">
           <div className="modal-content">
             <h2 className="text-purple-400">Description</h2>
-            <p>{description}</p>
+            <p className="expcard-fg-desc2">{description}</p>
             <button className="close-btn" onClick={() => setIsOpen(false)}>
               Close
             </button>

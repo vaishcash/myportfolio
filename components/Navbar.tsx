@@ -45,14 +45,14 @@ const Navbar = () => {
             </ScrollLink>
           </li>
 
-          <li>
+          {/* <li>
             <Link
               href="/notes"
               className="text-white font-medium  rounded-full bg-white/10 hover:px-4 hover:py-2 hover:bg-white/20 transition-colors"
             >
               Notes
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               href="/resume"
@@ -87,6 +87,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 50 }}
           exit={{ opacity: 10, y: -70 }}
+          onClick={() => setIsOpen(!isOpen)}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="lg:hidden absolute  left-0 right-0 bg-purple-600 backdrop-blur-lg flex flex-col items-center px-5 mx-8 rounded-lg shadow-lg"
         >
@@ -121,14 +122,14 @@ const Navbar = () => {
                 </ScrollLink>
               </li>
 
-              <li>
+              {/* <li>
                 <Link
                   href="/notes"
                   className="text-white/80 hover:text-purple-400 hover:bg-black hover:rounded-full hover:p-2 transition-colors"
                 >
                   Notes
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/resume"

@@ -8,7 +8,7 @@ export default function Home() {
 
         {/* Stars background */}
 
-        <div className="relative z-10 container mx-auto px-4 pt-32">
+        <div className="relative  container mx-auto px-4 pt-32">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-8xl font-bold mb-6 max-sm:text-3xl">
               Hi, I am Vaishnavi.
@@ -101,3 +101,4 @@ export default function Home() {
     </>
   );
 }
+

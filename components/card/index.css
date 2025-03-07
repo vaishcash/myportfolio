@@ -6,8 +6,6 @@
   perspective: 1400px;
   cursor: pointer;
   margin: 3rem;
-
-
 }
 
 .expcard-bg {
@@ -123,11 +121,10 @@ iframe,
 embed,
 object {
   display: block;
-  
 }
 
 .expcard-logo p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 100;
 }
 
@@ -155,11 +152,11 @@ object {
 
 /* Modal Box */
 .modal-content {
-  background: linear-gradient(135deg, #24003b, #44016e #24003b );
-  padding: 20px;
+  background: linear-gradient(135deg, #24003b, #44016e #24003b);
+  padding: 40px 0 40px 0;
   border-radius: 10px;
   width: 100%;
-  max-width: 400px;
+  max-width: 700px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
 }
@@ -167,7 +164,7 @@ object {
 /* Close Button */
 .close-btn {
   margin-top: 15px;
-  padding: 8px 16px;
+  padding: 6px 20px;
   background: #b2a3cf;
   color: rgb(255, 255, 255);
   border: none;
@@ -177,4 +174,12 @@ object {
 
 .close-btn:hover {
   background: rgb(133, 65, 217);
+}
+
+.expcard-fg-desc2 {
+  color: #fff;
+  font-size: 12px;
+  padding: auto;
+
+  letter-spacing: 2px;
 }
