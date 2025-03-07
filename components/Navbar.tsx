@@ -13,7 +13,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 bg-black/20 backdrop-blur-lg">
+    <nav className="fixed top-0 left-0 right-0 z-10  flex justify-center p-4 bg-black/20 backdrop-blur-lg">
       <div className="lg:flex hidden bg-black/20 backdrop-blur-lg rounded-full px-8 py-4">
         <ul className="flex space-x-16 ">
           <li>
@@ -44,7 +44,7 @@ const Navbar = () => {
               Experience
             </ScrollLink>
           </li>
-         
+
           <li>
             <Link
               href="/notes"
@@ -90,7 +90,7 @@ const Navbar = () => {
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="lg:hidden absolute  left-0 right-0 bg-purple-600 backdrop-blur-lg flex flex-col items-center px-5 mx-8 rounded-lg shadow-lg"
         >
-          <div className="lg:hidden absolute  left-0 right-0 bg-purple-600 backdrop-blur-lg flex flex-col items-center px-5 mx-8  rounded-lg">
+          <div className="lg:hidden absolute   left-0 right-0  bg-purple-900  backdrop-blur-lg flex flex-col items-center px-5 mx-8  rounded-lg">
             <ul className="flex flex-col space-y-4 my-8 ">
               <li>
                 <Link
@@ -120,8 +120,7 @@ const Navbar = () => {
                   Experience
                 </ScrollLink>
               </li>
-            
-              
+
               <li>
                 <Link
                   href="/notes"

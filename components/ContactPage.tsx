@@ -11,7 +11,7 @@ import {
   Instagram,
   Bean as Behance,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
+
 
 
 const ContactPage = () => {
@@ -54,7 +54,8 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br  p-4 md:p-8">
-      <Navbar />
+      
+      
       <motion.div
         className="max-w-4xl  mx-auto"
         initial="hidden"
@@ -64,7 +65,7 @@ const ContactPage = () => {
         <div className="bg-gradient-to-br  from-purple-900/80 via-gray-900/80 to-purple-900/80  backdrop-blur-sm rounded-2xl mt-24 p-8 md:p-12 shadow-2xl border border-purple-500/20">
           {/* Header Section */}
           <motion.div variants={itemVariants} className="mb-12">
-            <h1 className="text-4xl z-50 md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-pink-300 to-purple-400 text-transparent bg-clip-text mb-4">
+            <h1 className="text-4xl  md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-pink-300 to-purple-400 text-transparent bg-clip-text mb-4">
               Get in Touch
             </h1>
             <p className="text-gray-400 text-lg md:text-xl">
@@ -86,10 +87,10 @@ const ContactPage = () => {
             </div>
 
             {/* Contact Details */}
-            <div className="space-y-4 z-50">
+            <div className="space-y-4 ">
               <motion.a
                 href={`mailto:${contactInfo.email}`}
-                className="flex items-center gap-3 text-gray-300 hover:text-purple-400 transition-colors duration-300 group z-50 w-fit"
+                className="flex items-center gap-3 text-gray-300 hover:text-purple-400 transition-colors duration-300 group  w-fit"
                 whileHover={{ x: 10 }}
               >
                 <Mail
@@ -146,7 +147,7 @@ const ContactPage = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex z-40 items-center gap-3 p-4 rounded-lg bg-gray-600/30 text-gray-300 hover:text-purple-400 hover:bg-gray-500/50 transition-all duration-300 group"
+                  className="flex  items-center gap-3 p-4 rounded-lg bg-gray-600/30 text-gray-300 hover:text-purple-400 hover:bg-gray-500/50 transition-all duration-300 group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

@@ -5,14 +5,15 @@ import React from 'react'
 function contact() {
   return (
     <div>
-      <Navbar/>
       <div className="z-50">
+        <Navbar />
+      </div>  
 
-      <ContactPage/>
+      <div>
+        <ContactPage />
       </div>
-        
     </div>
-  )
+  );
 }
 
 export default contact

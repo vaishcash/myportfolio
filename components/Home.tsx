@@ -7,7 +7,6 @@ export default function Home() {
         {/* Navbar area */}
 
         {/* Stars background */}
-        
 
         <div className="relative z-10 container mx-auto px-4 pt-32">
           <div className="max-w-4xl mx-auto text-center">
@@ -15,7 +14,7 @@ export default function Home() {
               Hi, I am Vaishnavi.
             </h1>
             <p className="text-2xl text-gray-300 mb-12 max-sm:text-xl">
-              A Web and Quantum Software Engineer.
+              A Graphics and UI/UX Designer transitioning into Web Development.
             </p>
 
             <div className="flex justify-center items-center gap-4 max-sm:flex-col">
