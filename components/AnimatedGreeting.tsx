@@ -36,7 +36,7 @@ export function AnimatedGreeting() {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
         className={cn(
-          "text-center text-7xl font-bold transition-all duration-500 text-primary",
+          "text-center text-7xl max-sm:text-4xl font-bold transition-all duration-500 text-primary",
           isAnimating
             ? "opacity-0 transform translate-y-8"
             : "opacity-100 transform translate-y-0"
