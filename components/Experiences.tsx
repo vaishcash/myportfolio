@@ -68,7 +68,7 @@ const projectData = [
 function ExperienceCard() {
   return (
     <div  id="experience" className="pt-32">
-      <div  className="flex z-20 flex-col justify-center items-center text-center ">
+      <div  className="flex  flex-col justify-center items-center text-center ">
         <h1 className="text-4xl">Experience</h1>
         <p className="text-md bg-gradient-to-r from-gray-500 via-gray-100 to-gray-500 text-transparent bg-clip-text px-44 max-sm:px-16">
           My journey has been a learning experience shaped by my work at my
