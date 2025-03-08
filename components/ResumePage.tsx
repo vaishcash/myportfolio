@@ -6,8 +6,6 @@ import Link from "next/link";
 const Resume = () => {
   return (
     <>
-      
-
       <div className="bg-gradient-to-br  from-black via-purple-950 to-black min-h-screen p-4 md:p-8 flex justify-center items-start">
         <div className="max-w-4xl w-full bg-gray-900 shadow-2xl rounded-2xl p-6 md:p-8 border border-purple-500/30 backdrop-blur-sm hover:border-purple-500/10 transition-all mt-16 animate-fadeIn duration-300 ">
           {/* Header Section */}
@@ -113,6 +111,11 @@ const Resume = () => {
                 "Bootstrap",
                 "Git",
                 "Firebase",
+                "Figma",
+                "Adobe Illustrator",
+                "Adobe Photoshop",
+                "Adobe InDesign",
+                "Coreldraw",
               ].map((skill) => (
                 <div
                   key={skill}
@@ -148,9 +151,15 @@ const Resume = () => {
             <div className="space-y-6">
               {[
                 {
+                  title: "Web Development Intern",
+                  company: "CodSoft",
+                  period: "February 2025 – March 2025",
+                  location: "New Delhi, India",
+                },
+                {
                   title: "Graphic Designer",
                   company: "XYZ Digital Private Limited",
-                  period: "June 2023 – November 2024",
+                  period: "June 2023 – December 2024",
                   location: "New Delhi, India",
                 },
                 {
