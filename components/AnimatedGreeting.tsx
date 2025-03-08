@@ -47,7 +47,7 @@ export function AnimatedGreeting() {
         }}
         lang={greetings[currentIndex].lang}
       >
-        <FaCircle className="inline-block text-blue-700" size={30} />
+        <FaCircle className="inline-block text-purple-700" size={30} />
         <span className="inline-block mx-6">
           {greetings[currentIndex].text}
         </span>

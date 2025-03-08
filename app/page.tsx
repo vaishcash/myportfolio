@@ -5,14 +5,14 @@ import Home from "@/components/Home";
 import Navbar from "@/components/Navbar";
 import { Suspense } from "react";
 
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
-// async function waitForSeconds(seconds: number) {
-//   return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
-// }
+async function waitForSeconds(seconds: number) {
+  return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
+}
 
 export default async function App() {
-  // await waitForSeconds(5);
+  await waitForSeconds(5);
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Navbar />
