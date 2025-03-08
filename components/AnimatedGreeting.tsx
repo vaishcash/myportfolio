@@ -26,7 +26,7 @@ export function AnimatedGreeting() {
       setTimeout(() => {
         setCurrentIndex((current) => (current + 1) % greetings.length);
         setIsAnimating(false);
-      }, 250); // Half of the transition time
+      }, 200); // Half of the transition time
     }, 800); // Total time for each greeting
 
     return () => clearInterval(interval);
