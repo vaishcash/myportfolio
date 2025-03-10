@@ -32,20 +32,14 @@ const Navbar = () => {
               to={href}
               smooth={true}
               duration={400}
-              className={`text-white px-4 py-2 font-medium rounded-full bg-white/10 transition-colors hover:px-4 hover:py-2 hover:bg-white/20 ${
-                isMobile
-                  ? "cursor-pointer hover:text-purple-400 hover:bg-black hover:p-2"
-                  : ""
-              }`}
+              className="text-white px-4 py-2 font-medium rounded-full bg-white/10 transition-colors hover:px-4 hover:py-2 hover:bg-white/20 "
             >
               {label}
             </ScrollLink>
           ) : (
             <Link
               href={href}
-              className={`text-white px-4 py-2 font-medium rounded-full bg-white/10 transition-colors hover:px-4 hover:py-2 hover:bg-white/20 ${
-                isMobile ? "hover:text-purple-400 hover:bg-black hover:p-2" : ""
-              }`}
+              className="text-white px-4 py-2 font-medium rounded-full bg-white/10 transition-colors hover:px-4 hover:py-2 hover:bg-white/20 "     
             >
               {label}
             </Link>
@@ -81,7 +75,7 @@ const Navbar = () => {
           exit={{ opacity: 10, y: -70 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           onClick={() => setIsOpen(false)}
-          className="lg:hidden absolute left-0 right-0 bg-purple-900 backdrop-blur-lg flex flex-col items-center px-5 mx-8 rounded-lg shadow-lg"
+          className="lg:hidden absolute left-0 right-0 bg-purple-900 backdrop-blur-lg flex flex-col text-center justify-center items-center px-5 mx-8 rounded-lg shadow-lg "
         >
           {renderLinks(true)}
         </motion.div>
