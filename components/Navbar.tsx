@@ -32,6 +32,7 @@ const Navbar = () => {
               to={href}
               smooth={true}
               duration={400}
+              onClick={() => setIsOpen(!isOpen)}
               className="text-white px-4 py-2 font-medium rounded-full bg-white/10 transition-colors hover:px-4 hover:py-2 hover:bg-white/20 "
             >
               {label}
@@ -39,7 +40,7 @@ const Navbar = () => {
           ) : (
             <Link
               href={href}
-              className="text-white px-4 py-2 font-medium rounded-full bg-white/10 transition-colors hover:px-4 hover:py-2 hover:bg-white/20 "     
+              className="text-white px-4 py-2 font-medium rounded-full bg-white/10 transition-colors hover:px-4 hover:py-2 hover:bg-white/20 "
             >
               {label}
             </Link>
